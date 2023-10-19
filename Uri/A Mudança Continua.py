@@ -2,7 +2,7 @@ while True:
     try:
         grau = float(input())
         sec = int((grau+90)*240)
-        if sec > (24*60*60):
+        if sec >= (24*60*60):
             sec -= (24*60*60)
 
         if 0 <= grau < 90 or grau == 360:
