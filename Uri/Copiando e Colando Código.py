@@ -6,16 +6,16 @@ body = []
 d = 0
 while True:
     l = str(input())
-    if l.strip() in "</html>":
+    if l.strip() == "</html>":
         break
 
-    if l.strip() in "</body>":
+    if l.strip() == "</body>":
         d = 0 
 
     if d == 1:
         body.append(l)
 
-    if l.strip() in "<body>":
+    if l.strip() == "<body>":
         d = 1 
 
 printList(body)
