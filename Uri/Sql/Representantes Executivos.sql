@@ -1,4 +1,4 @@
-select p.name, c.name 
-from providers c inner join products p on p.id_providers=c.id 
-inner join categories cl on p.id_categories=cl.id
-where cl.id = 6;
+SELECT p.name, c.name 
+FROM providers c INNER JOIN products p ON p.id_providers=c.id 
+INNER JOIN categories cl ON p.id_categories=cl.id
+WHERE cl.id = 6;

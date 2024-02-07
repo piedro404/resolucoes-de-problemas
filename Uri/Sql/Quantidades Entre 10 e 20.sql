@@ -1,4 +1,6 @@
-select p.name 
-from providers pr inner join products p
-on p.id_providers = pr.id
-where p.amount >10 and p.amount<20  and pr.name like 'P%';
+SELECT p.name 
+FROM providers pr INNER JOIN products p
+ON p.id_providers = pr.id
+WHERE p.amount > 10 
+AND p.amount< 20 
+AND pr.name LIKE 'P%';

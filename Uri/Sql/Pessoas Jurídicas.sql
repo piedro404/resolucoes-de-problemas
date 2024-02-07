@@ -1,3 +1,3 @@
-select name
-from customers inner join legal_person
-on id_customers=id
+SELECT name
+FROM customers INNER JOIN legal_person
+ON id_customers=id;

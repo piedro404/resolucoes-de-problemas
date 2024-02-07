@@ -1,2 +1,2 @@
-select round(avg(price),2) as price
-from products;
+SELECT ROUND(AVG(price),2) AS price
+FROM products;

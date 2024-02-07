@@ -1,6 +1,6 @@
-select p.name, pr.name, p.price
-from products p inner join providers pr 
-on pr.id = p.id_providers 
-inner join categories c
-on c.id = p.id_categories
-where p.price>1000 and c.name='Super Luxury';
+SELECT p.name, pr.name, p.price
+FROM products p INNER JOIN providers pr 
+ON pr.id = p.id_providers 
+INNER JOIN categories c
+ON c.id = p.id_categories
+WHERE p.price > 1000 AND c.name='Super Luxury';
