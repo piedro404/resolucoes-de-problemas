@@ -3,7 +3,6 @@ SELECT
     dv.nome AS divisao,
     ROUND(AVG(salario_liquido), 2) AS media,
     ROUND(MAX(salario.salario_liquido), 2) AS maior
-    -- CAST(MAX(salario.salario_liquido) AS DECIMAL(10, 2)) AS maior
 FROM
     departamento d
     INNER JOIN divisao dv ON d.cod_dep = dv.cod_dep
