@@ -1,7 +1,7 @@
---- URI Online Judge SQL
---- Copyright URI Online Judge
---- www.urionlinejudge.com.br
---- Problem 2991
+-- URI Online Judge SQL
+-- Copyright URI Online Judge
+-- www.urionlinejudge.com.br
+-- Problem 2991
 
 CREATE TABLE departamento(
     cod_dep int,

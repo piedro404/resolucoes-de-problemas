@@ -1,8 +1,9 @@
 SELECT
-    d.nome AS departamento,
-    dv.nome AS divisao,
-    ROUND(AVG(salario_liquido), 2) AS media,
-    ROUND(MAX(salario.salario_liquido), 2) AS maior
+    d.nome AS Departamento,
+    e.nome AS Empregado,
+    salario_bruto AS "Salario Bruto",
+    descontos AS "Total Desconto",
+    salario_liquido AS "Salario Liquido"
 FROM
     departamento d
     INNER JOIN divisao dv ON d.cod_dep = dv.cod_dep
@@ -39,8 +40,5 @@ FROM
                     e.matr
             ) descontos ON salario_bruto.matr = descontos.matr
     ) salario ON e.matr = salario.matr
-GROUP BY
-    d.nome,
-    dv.nome
 ORDER BY
-    media DESC;
+    salario_liquido DESC

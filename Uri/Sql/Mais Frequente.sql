@@ -15,12 +15,14 @@ FROM
 ORDER BY
     frequent DESC
 LIMIT
-    1
-
--- OUTRA OPÇÂO MAIS SIMPLES
-
-SELECT amount AS most_frequent_value
-FROM value_table
-GROUP BY amount
-ORDER BY COUNT(amount) DESC
-LIMIT 1;
+    1 -- OUTRA OPÇÂO MAIS SIMPLES
+SELECT
+    amount AS most_frequent_value
+FROM
+    value_table
+GROUP BY
+    amount
+ORDER BY
+    COUNT(amount) DESC
+LIMIT
+    1;

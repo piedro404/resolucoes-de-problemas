@@ -1,7 +1,7 @@
---- URI Online Judge SQL
---- Copyright URI Online Judge
---- www.urionlinejudge.com.br
---- Problem 2740
+-- URI Online Judge SQL
+-- Copyright URI Online Judge
+-- www.urionlinejudge.com.br
+-- Problem 2740
 
 CREATE TABLE league(
   position INTEGER,

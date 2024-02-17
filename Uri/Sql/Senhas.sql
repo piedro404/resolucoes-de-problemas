@@ -1,2 +1,6 @@
-SELECT id, password, MD5(password) AS MD5
-FROM account
+SELECT
+    id,
+    password,
+    MD5(password) AS MD5
+FROM
+    account

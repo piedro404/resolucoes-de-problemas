@@ -8,7 +8,11 @@ FROM
             d.nome AS departamento,
             dv.nome AS divisao,
             ROUND(AVG(salario_liquido), 2) AS media,
-            ROW_NUMBER() OVER (PARTITION BY d.nome ORDER BY ROUND(AVG(salario_liquido), 2) DESC) AS ranking
+            ROW_NUMBER() OVER (
+                PARTITION BY d.nome
+                ORDER BY
+                    ROUND(AVG(salario_liquido), 2) DESC
+            ) AS ranking
         FROM
             departamento d
             INNER JOIN divisao dv ON d.cod_dep = dv.cod_dep
@@ -50,7 +54,7 @@ FROM
             dv.nome
         ORDER BY
             media DESC
-) ranking_departamentos
+    ) ranking_departamentos
 WHERE
     ranking = 1
 ORDER BY

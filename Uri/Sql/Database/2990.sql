@@ -1,7 +1,7 @@
---- URI Online Judge SQL
---- Copyright URI Online Judge
---- www.urionlinejudge.com.br
---- Problem 2990
+-- URI Online Judge SQL
+-- Copyright URI Online Judge
+-- www.urionlinejudge.com.br
+-- Problem 2990
 
 CREATE TABLE empregados (
     cpf varchar(15),

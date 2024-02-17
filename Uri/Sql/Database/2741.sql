@@ -1,7 +1,7 @@
---- URI Online Judge SQL
---- Copyright URI Online Judge
---- www.urionlinejudge.com.br
---- Problem 2741
+-- URI Online Judge SQL
+-- Copyright URI Online Judge
+-- www.urionlinejudge.com.br
+-- Problem 2741
 
 CREATE TABLE students(
   id INTEGER PRIMARY KEY,

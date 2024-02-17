@@ -1,3 +1,6 @@
-SELECT city 
-FROM providers
-ORDER BY city;
+SELECT
+    city
+FROM
+    providers
+ORDER BY
+    city;
