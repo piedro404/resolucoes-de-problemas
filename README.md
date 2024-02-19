@@ -1,4 +1,4 @@
-# Repositório de Soluções de Desafios de Programação 💻
+# Soluções de Desafios de Programação 💻
 Este repositório contém as minhas soluções para desafios de programação de sites como o URI e o Codeforces. Aqui, você pode encontrar uma coleção de códigos que demonstram minha abordagem para resolução de problemas e meu progresso em programação competitiva.
 
 # Estrutura do Repositório 🧩
