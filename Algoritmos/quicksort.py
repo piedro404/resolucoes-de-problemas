@@ -2,9 +2,17 @@ def quicksort(arr):
     if len(arr) <= 1:
         return arr
     pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
+    left = []
+    middle = []
+    right = []
+    for x in arr:
+        if x > pivot:
+            right.append(x)
+        elif x < pivot:
+            left.append(x)
+        else:
+            middle.append(x)
+            
     return quicksort(left) + middle + quicksort(right)
 
 # Exemplo de uso
