@@ -1,4 +1,4 @@
-class FenwickTree:
+class FenwickTreeFullCode:
     def __init__(self, array: list) -> None:
         self.len_array = len(array)
         self.fenwick_array = [0]*(self.len_array)
@@ -61,30 +61,81 @@ class FenwickTree:
             
         return lsb
 
-
 # Lista para ser estruturada
 array_ex = [1, 3, 2, 4, 1, 2, 5, 3, 6, 4, 7, 1, 9, 6, 5]
 
 print("\nAlgoritmo de Estrutura de Dados de Fenwick Tree (A Sum List que atualiza)\n")
+
+print("\nFullCode\n")
 
 print(f"Lista Normal: {array_ex}")
 
 print("\nConstruindo a Fenwick Tree\n")
 
 # Chamando a Classe e desenvolvendo a Árvore de Fenwick (Fenwick Tree)
-ft = FenwickTree(array_ex)
-print(f"Lista Fenwick Tree: {ft.fenwick_array}")
+ftfc = FenwickTreeFullCode(array_ex)
+print(f"Lista Fenwick Tree: {ftfc.fenwick_array}")
 # [1, 4, 2, 10, 1, 3, 5, 21, 6, 10, 7, 18, 9, 15, 5]
 
 # Valor da Soma Total da Lista
-print(f"Soma da Lista: {ft.query(0, 14)}")
+print(f"Soma da Lista: {ftfc.query(0, 14)}")
 
 print("\nAtualizando a posição 4 para o valor 4\n")
 
 # Atualizando o valor de uma posição da lista
-ft.update(4, 4)
-print(f"Lista Fenwick Tree: {ft.fenwick_array}")
+ftfc.update(4, 4)
+print(f"Lista Fenwick Tree: {ftfc.fenwick_array}")
 # [1, 4, 2, 10, 4, 6, 5, 24, 6, 10, 7, 18, 9, 15, 5]
 
 # Valor da Soma Total da Lista com o valor Atualizado
+print(f"Soma da Lista: {ftfc.query(0, 14)}")
+
+class FenwickTree:
+    def __init__(self, n):
+        self.len_array = n
+        self.fenwick_array = [0] * n
+        
+    # def constructor(self, value, idx: int) -> None:
+    #     fi=idx+1
+    #     while fi <= self.len_array:
+    #         self.fenwick_array[fi-1] += value
+    #         fi += fi & -fi
+
+    def update(self, value, idx: int) -> None:
+        fi=idx+1
+        # value = value - self.fenwick_array[fi-1]
+        while fi <= self.len_array:
+            self.fenwick_array[fi-1] += value
+            fi += fi & -fi
+    
+    def query(self, start: int, end: int) -> int:
+        sum_interval = 0
+        fi=end+1
+        while fi >= start+1:
+            sum_interval += self.fenwick_array[fi-1]
+            fi -= fi & -fi        
+        
+        return sum_interval
+
+print("\nSimpleCode\n")
+
+print(f"Lista Normal: {array_ex}")
+
+print("\nConstruindo a Fenwick Tree\n")
+
+ft = FenwickTree(len(array_ex)) 
+for x in range(len(array_ex)):
+    # ft.constructor(array_ex[x], x)
+    ft.update(array_ex[x], x)
+    
+print(f"Lista Fenwick Tree: {ft.fenwick_array}")
+
+print(f"Soma da Lista: {ft.query(0, 14)}")
+
+print("\nAtualizando a posição 4 para o valor 4\n")
+
+# ft.update(4, 4)
+ft.update(3, 4)
+print(f"Lista Fenwick Tree: {ft.fenwick_array}")
+
 print(f"Soma da Lista: {ft.query(0, 14)}")
