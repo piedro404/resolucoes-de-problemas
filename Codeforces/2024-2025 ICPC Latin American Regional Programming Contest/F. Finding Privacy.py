@@ -1,29 +1,24 @@
 people, toilets = map(int, input().split())
-
-minPeople = toilets // 2
-maxPeople = minPeople if (toilets % 2 == 0) else minPeople+1
+ 
+maxPeople = toilets // 2 if (toilets % 2 == 0) else (toilets // 2)+1
 toiletsFreedom = toilets-people
 result = ""
-
-# print(minPeople, maxPeople)
-if people < minPeople or people > maxPeople:
+ 
+if people > maxPeople:
     print("*")
 else:
-    privacy = [["X"] for _ in range(people)]
-    if (people < toiletsFreedom):
-        for i, x in enumerate(privacy):
-            if (toiletsFreedom > 0 and toiletsFreedom > people-i):
-                x.append("-")
-                toiletsFreedom -=1
-            if (toiletsFreedom > 0):
-                x.insert(0, "-")
-                toiletsFreedom -=1
-            result += "".join(x)
-    else:
-        for x in privacy:   
-            if (toiletsFreedom > 0):
-                x.append("-")
-                toiletsFreedom -=1
-            result += "".join(x)
+    for x in range(people):
+        if (toiletsFreedom > 0 and toiletsFreedom > people-x):
+            result += "-"
+            toiletsFreedom -=1
 
-print(result)
+        result += "X"
+
+        if (toiletsFreedom > 0):
+            result += "-"
+            toiletsFreedom -=1
+
+    if len(result) != toilets:
+        print("*")
+    else:
+        print(result)
