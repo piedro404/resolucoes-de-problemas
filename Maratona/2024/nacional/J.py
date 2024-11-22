@@ -1,30 +1,26 @@
 import math
 
-def quicksort(matrix):
-    if len(matrix) <= 1:
-        return matrix
-    pivot = matrix[len(matrix) // 2][0]
-    left = []
-    middle = []
-    right = []
-    for x in matrix:
-        if x[0] > pivot:
-            right.append(x)
-        elif x[0] < pivot:
-            left.append(x)
-        else:
-            middle.append(x)
-            
-    return quicksort(left) + middle + quicksort(right)
-
 dados = list(map(int, input().split()))
-peoples = []
+cot_theta_shadow = 1 / math.tan(math.radians(dados[0]))
+shadows = []
 for x in range(dados[1]):
-    peoples.append(list(map(int, input().split())))
+    inputs = list(map(int, input().split()))
+    shadows.append([inputs[0], inputs[0] + (inputs[1] * cot_theta_shadow)])
 
-peoples = quicksort(peoples)
+shadows.sort()
 
-graus = math.radians(dados[0])
-distancia = 0
+distance = 0
 
+distance_shadows = 0
+current_start, current_end = shadows[0]
 
+for x in range(1, len(shadows)):
+    if shadows[x][0] <= current_end:
+        current_end = max(shadows[x][1], current_end)
+    else:
+        distance_shadows += current_end - current_start
+        current_start, current_end = shadows[x]
+    
+distance_shadows += current_end - current_start
+
+print(f"{distance_shadows:.4f}")
