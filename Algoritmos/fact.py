@@ -11,5 +11,5 @@ def fact(n):
 
     return fact
 
-n = 143
+n = 123
 print(fact(n))
