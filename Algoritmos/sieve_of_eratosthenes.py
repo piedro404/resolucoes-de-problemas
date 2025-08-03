@@ -10,4 +10,4 @@ def sieve_of_eratosthenes(n):
     primes = [i for i, prime in enumerate(is_prime) if prime]
     return primes
 
-print(sieve_of_eratosthenes(int(input()))[-1])
+print(sieve_of_eratosthenes(int(input())))
