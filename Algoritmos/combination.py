@@ -1,3 +1,5 @@
+# Com BitMask
+
 primes = [2, 3, 5, 7]
 for mask in range(1, 1 << 4): 
     subset = []

@@ -11,3 +11,28 @@ def sieve_of_eratosthenes(n):
     return primes
 
 print(sieve_of_eratosthenes(int(input())))
+
+# Logicamente similar ao código abaixo, porem, salva os primos em uma lista para ser usada posteriormente.:
+
+MAXN = 100100
+MAXV = 1000100
+
+pr = [True] * MAXV
+fator = [0] * MAXV
+cnt = [0] * MAXV
+
+pr[0] = pr[1] = False
+
+for i in range(2, MAXV):
+    if pr[i]:
+        fator[i] = i
+        for j in range(i * i, MAXV, i):
+            pr[j] = False
+            fator[j] = i
+
+primes = []
+for x in range(int(input())):
+    if pr[x]:
+        primes.append(x)
+
+print(primes)
