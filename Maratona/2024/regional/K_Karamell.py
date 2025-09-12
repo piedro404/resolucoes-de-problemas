@@ -1,4 +1,4 @@
-def subset_sum(vector, mid, n):
+def backspace(vector, mid, n):
     dp = [[False for x in range(mid+1)] for x in range(n+1)]
 
     dp[0][0] = True
@@ -24,7 +24,7 @@ def main():
         return 
 
     mid //= 2
-    dp = subset_sum(vector, mid, n)
+    dp = backspace(vector, mid, n)
 
     if(not(dp[-1][-1])):
         print("-1")
